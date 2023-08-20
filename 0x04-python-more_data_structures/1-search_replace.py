@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 def search_replace(my_list, search, replace):
     my_list = [search, food, string]
-    my_list[0] = replace
-    return(my_list)
+    new_list = my_list.copy()
+    new_list = list(map(lambda x: replace if x == search else, x))
+    return (new_list)
