@@ -1,7 +1,11 @@
 #!/usr/bin/python3
-"""A module for square"""
+"""0-square.py
+    This is a simple class that defines Square.
+"""
 
 
 class Square:
-    """Indicating a square"""
+    """
+        This is the class with an empty block.
+    """
     pass
