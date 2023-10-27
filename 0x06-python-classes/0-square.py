@@ -6,6 +6,7 @@
 
 class Square:
     """
-        This is the class with an empty block.
+        This is the class with an empty block
     """
     pass
+
