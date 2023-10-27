@@ -19,21 +19,25 @@ class Square:
             TypeError: size must be an integer
             ValueError: size must be >= 0
         """
-        if not isinstance(size, int):
+        self.__size = size
+
+
+    @property
+    def size(self):
+        """Getter for private attribute, size"""
+        return (self.__size)
+
+    @size.setter
+    def size(self, value):
+        """Setter for private attribute, size"""
+
+        if not isinstance(value, int):
             raise TypeError("size must be an integer")
-        elif size < 0:
+        elif value < 0:
             raise ValueError("size must be >= 0")
         else:
-            self.__size = size
+            self.__size = value
 
     def area(self):
         """Method that calculates the current square area"""
         return (self.__size * self.__size)
-
-    def size(self, value):
-        """Private Attribute size Setter"""
-        self.__value = value
-
-    def size(self):
-        """Private Attribute size Getter"""
-        return self.__value
