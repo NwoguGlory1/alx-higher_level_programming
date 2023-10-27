@@ -5,3 +5,4 @@
 class Square:
     """a class with an empty block"""
     pass
+
