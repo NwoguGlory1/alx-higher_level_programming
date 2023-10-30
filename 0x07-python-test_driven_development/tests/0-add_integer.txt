@@ -1,0 +1,87 @@
+"""
+This is a test file for the add_integer function.
+"""
+>>> add_integer = __import__("0-add_integer").add_integer
+>>> add_integer(5)  # When only 'a' is provided
+103
+>>>
+>>> add_integer(-5.5)  # When only 'a' is provided as a negative float
+93
+>>>
+>>> add_integer(5.1)  # When only 'a' is provided
+103
+>>>
+>>> add_integer(5, 2)  # When both 'a' and 'b' are provided
+7
+>>>
+>>> add_integer(5.1, 2.1)  # Converts float arguments to integers
+7
+>>>
+>>> add_integer(5, 2.1)  # Works with float values
+7
+>>>
+>>> add_integer(5.1, 2)  # Works with float values
+7
+>>>
+>>> add_integer(-5, -2)  # Works with negative numbers
+-7
+>>> add_integer(-5, 2)  # Works with negative, positive numbers
+-3
+>>> add_integer(5, -2)  # Works with negative, positive numbers
+3
+>>> add_integer(-5.1,-2.1)  # Works with negative float numbers
+-7
+>>>
+>>> add_integer(-5.1,2.1)  # Works with negative float numbers
+-3
+>>>
+>>> add_integer(5.1,-2.1)  # Works with negative float numbers
+3
+>>> add_integer('5', 2)  # Raises a TypeError for non-integer 'a'
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+>>> add_integer(5, '2')  # Raises a TypeError for non-integer 'b'
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+>>>
+>>> add_integer([5, 2], 2) # Raises a TypeError for lists
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+>>>
+>>> add_integer(5, [5, 2]) # Raises a TypeError for lists
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+>>>
+>>> add_integer((5, 2), 2) # Raises a TypeError for tuple
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+>>>
+>>> add_integer(5, (5, 2))# Raises a TypeError for tuple
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+>>>
+>>> add_integer({5, 2}, 2) # Raises a TypeError for set
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+>>>
+>>> add_integer(5, {5, 2}) # Raises a TypeError for set
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+>>>
+>>> add_integer({"H": 2}, 2) # Raises a TypeError for dict
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+>>>
+>>> add_integer(5, {"H": 2}) # Raises a TypeError for dict
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
