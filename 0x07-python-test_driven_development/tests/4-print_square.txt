@@ -1,0 +1,48 @@
+"""
+This is a test file for the print_square function.
+"""
+>>> print_square = __import__("4-print_square").print_square
+>>> print_square(1) # Integer argument
+#
+>>>
+>>> print_square(4) # Integer argument
+####
+####
+####
+####
+>>>
+>>> print_square(0) # Integer argument
+>>>
+>>> print_square(1.0) # +ve Float argument
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer
+>>>
+>>> print_square(-2.0) # -ve Float argument
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer
+>>>
+>>> print_square('2') # String argument
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer
+>>>
+>>> print_square((2, 4)) # list argument
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer
+>>>
+>>> print_square({2}) # set argument
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer
+>>> print_square(-2) # -ve int argument
+Traceback (most recent call last):
+    ...
+ValueError: size must be >= 0
+>>>
+>>> print_square() # null argument
+Traceback (most recent call last):
+    ...
+TypeError: print_square() missing 1 required positional argument: 'size'
