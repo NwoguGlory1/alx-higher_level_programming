@@ -1,0 +1,119 @@
+"""
+This is a test file for the matrix_divided function.
+"""
+>>> matrix_divided = __import__("2-matrix_divided").matrix_divided
+>>> matrix_divided([[1, 2, 3], [4, 5, 6]], 2) # matrix  with int values
+[[0.5, 1.0, 1.5], [2.0, 2.5, 3.0]]
+>>>
+>>> matrix_divided([[0.5, 1.2, 1.8], [3.7, 6.2, 2.5]], 2) # matrix  with float  values
+[[0.25, 0.6, 0.9], [1.85, 3.1, 1.25]]
+>>>
+>>> matrix_divided([[1, 2.5, 3.3], [4.0, 5, 6.5]], 2) # matrix  with int, float values
+[[0.5, 1.25, 1.65], [2.0, 2.5, 3.25]]
+>>>
+>>> matrix_divided([[-1, -2, -3], [-4, -5, -6]], 2) # matrix with -ve int values
+[[-0.5, -1.0, -1.5], [-2.0, -2.5, -3.0]]
+>>>
+>>> matrix_divided([[-0.5, -1.2, -1.8], [-3.7, -6.2, -2.5]], 2) # matrix with -ve float  values
+[[-0.25, -0.6, -0.9], [-1.85, -3.1, -1.25]]
+>>>
+>>> matrix_divided([[-1, -2.5, -3.3], [-4.0, -5, -6.5]], 2) # matrix with -ve int, float values
+[[-0.5, -1.25, -1.65], [-2.0, -2.5, -3.25]]
+>>>
+>>> matrix_divided([[1.234, -2, 3.456], [-4.789, 5, -6.12345]], 2) # int, float values with large d.p
+[[0.62, -1.0, 1.73], [-2.39, 2.5, -3.06]]
+>>> 
+>>> matrix_divided([[1, 2, 3], [4, 5, 6]], 0) # +ve int matrix divided by zero
+Traceback (most recent call last):
+    ...
+ZeroDivisionError: division by zero
+>>>
+>>> matrix_divided([[0.5, 1.2, 1.8], [3.7, 6.2, 2.5]], 0) # float divided by zero
+Traceback (most recent call last):
+    ...
+ZeroDivisionError: division by zero
+>>>
+>>> matrix_divided([[1, 2.5, 3.3], [4.0, 5, 6.5]], 0) #+ve int, float divided by zero
+Traceback (most recent call last):
+    ...
+ZeroDivisionError: division by zero
+>>>
+>>> matrix_divided([[-1, -2.5, -3.3], [-4.0, -5, -6.5]], 0) # -ve int, float diided by zero
+Traceback (most recent call last):
+    ...
+ZeroDivisionError: division by zero
+>>>
+>>> matrix_divided(None, 2) # Invalid matrix
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>>
+>>> matrix_divided([[]], 2) # Empty matrix
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>>
+>>> matrix_divided([], 2) # Empty list matrix
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>>
+>>> matrix_divided([1, 2, 3], 2) # list with values matrix
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>>
+>>> matrix_divided((3, 4), 2) # tuple
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>>
+>>> matrix_divided({3, 4}, 2) # Sets
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>>
+>>> matrix_divided({"3": 4}, 2) # dictionary
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>>
+>>> matrix_divided([[1, 3], 4], 2) # Not list os lists
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>>
+>>> matrix_divided([[1, 2, 3], [5, 8, 9, 10]], 2) # Invalid length
+Traceback (most recent call last):
+    ...
+TypeError: Each row of the matrix must have the same size
+>>>
+>>> matrix_divided([[1, 2, 3], [3, 4]], 2) # Invalid length
+Traceback (most recent call last):
+    ...
+TypeError: Each row of the matrix must have the same size
+>>>
+>>> matrix_divided([[1, 3], [4, 5]], "2") # Invalid div argument
+Traceback (most recent call last):
+    ...
+TypeError: div must be a number
+>>>
+>>> matrix_divided([[1, 3], [4, 5]], [2]) #list as div
+Traceback (most recent call last):
+    ...
+TypeError: div must be a number
+>>>
+>>> matrix_divided([[1, 3], [4, 5]], (2, 2)) # tuple as div
+Traceback (most recent call last):
+    ...
+TypeError: div must be a number
+>>>
+>>> matrix_divided([[1, 3], [4, 5]], {"H": 2}) # dictionary as div
+Traceback (most recent call last):
+    ...
+TypeError: div must be a number
+>>>
+>>> matrix_divided([[1, 3], [4, 5]], float('nan')) # not a number as div
+Traceback (most recent call last):
+    ...
+TypeError: div must be a number
