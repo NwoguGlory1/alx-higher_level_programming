@@ -1,0 +1,31 @@
+"""
+This is a test file for the say_my_name function.
+"""
+>>> say_my_name = __import__("3-say_my_name").say_my_name
+>>> say_my_name("Nwogu", "Glory") # Two names as strings
+My name is Nwogu Glory
+>>>
+>>> say_my_name(53, "Nwogu") # Invalid first_name
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+>>>
+>>> say_my_name(5.3, "Nwogu") # Invalid first_name
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+>>>
+>>> say_my_name([5.3], "Nwogu") # Invalid list as first_name
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+>>>
+>>> say_my_name(['G', 'l', 'o', 'r', 'y'], "Travolta") # Invalid tuple as first_name
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+>>>
+>>> say_my_name('z', ('x', 'y')) #Invalid set as first_name
+Traceback (most recent call last):
+    ...
+TypeError: last_name must be a string
