@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""add all argumenst to a json file"""
+"""add all argumenst to a json file
+and save them to a file"""
 
 
 if __name__ == "__main__":
