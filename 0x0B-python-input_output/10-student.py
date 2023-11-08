@@ -22,9 +22,7 @@ class Student:
         This returns the dictionary description
         of a Student instance, attrs
         """
-        if attrs is None:
-            return (self.__dict__, attrs.__dict__)
-        else:
-            if isinstance(attrs, list):
-                return [attr for attr in list if hasattr(self, attr)]
-
+        if isinstance(attrs, list) and
+            all(isinstance(x, str) for x in attrs)):
+                return {x: getattr(self, x) for x in attrs if hasattr(self, x)}
+            return self.__dict__
