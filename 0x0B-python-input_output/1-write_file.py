@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" overwrite the content of the byte"""
+""" overwrites the content of the byte"""
 
 def write_file(filename="", text=""):
     """write to file
@@ -8,7 +8,7 @@ def write_file(filename="", text=""):
     text: the text
 
     Returns:
-    return the number of byte written
+    return the number of byte/character written
     """
     with open(filename, 'w', encoding='utf-8') as f:
         return f.write(text)
