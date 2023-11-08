@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ overwrites the content of the byte"""
 
+
 def write_file(filename="", text=""):
     """write to file
 
