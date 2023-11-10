@@ -4,6 +4,7 @@ This is a test file for the integer_validator function.
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 >>> bg = BaseGeometry()
 >>> bg.integer_validator("my_int", 10) #Testing for valid case
+>>> bg.integer_validator("my_int", 89) #Testing for valid case
 >>>
 # Testing for Invalid case
 >>> bg.integer_validator("my_int", 'dog') #when value is not an int
@@ -14,6 +15,6 @@ TypeError: my_int must be an integer
 Traceback (most recent call last):
 ValueError: my_int must be greater than 0
 >>>
->>> bg.integer_validator("my_int", -5) #when value is < 0
+>>> bg.integer_validator("distance", -5) #when value is < 0
 Traceback (most recent call last):
-ValueError: my_int must be greater than 0
+ValueError: distance must be greater than 0
