@@ -6,7 +6,7 @@ Rectangle = __import__('9-rectangle').Rectangle
 
 
 class Square(Rectangle):
-    """ Class that defines a Square by inheritance of Rectangle class """
+    """ Class that defines a Square by inheritance from Rectangle class """
 
     def __init__(self, size):
         """ Instantiator """
