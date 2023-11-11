@@ -78,8 +78,12 @@ class Rectangle(Base):
 
     def display(self):
         """pubic method tha prints in stdout Rectangle instance with: # """
+        for i in range(self.__y):
+            print()
         for i in range(self.__height):
-            for j in range(self.__width):
+            for j in range(self.__x):
+                print(' ', end='')
+            for k in range(self.__width):
                 print('#', end='')
             print()
 
