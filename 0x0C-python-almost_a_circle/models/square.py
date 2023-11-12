@@ -13,10 +13,17 @@ class Square(Rectangle):
         self.x = x
         self.y = y
 
+    @property
     def size(self):
-        """ width and height that inherits that of Rectangle"""
-        return self.size
+        """Getter for width and height that inherits that of Rectangle"""
+        return self.width  # Or return self.height here #
+
+    @size.setter
+    def size(self, value):
+        """Setter for height/width"""
+        self.width = value
+        self.height = value
 
     def __str__(self):
         """ Overloading __str__ method"""
-        return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
+        return f"[Square] ({self.id}) {self.x}/{self.y} - {self.size}"
