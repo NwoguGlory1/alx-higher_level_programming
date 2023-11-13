@@ -27,3 +27,15 @@ class Square(Rectangle):
     def __str__(self):
         """ Overloading __str__ method"""
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.size}"
+
+    def update(self, *args, **kwargs):
+        """Assigns attributes to each attribute"""
+        argmnts = ('id', 'size', 'x', 'y')
+
+        if args:
+            for i, value in enumerate((args)):
+                setattr(self, argmnts[i], value)
+
+        elif kwargs:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
