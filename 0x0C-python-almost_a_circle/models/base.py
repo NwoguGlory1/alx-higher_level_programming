@@ -25,16 +25,16 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """Class method that writes JSON sting rep of list_objs to a file"""
+        """Class method that writes JSON string rep of list_objs to a file"""
         jlist = []
         filename = cls.__name__ + ".json"
         if list_objs:
             for i in list_objs:
                 jlist.append(i.to_dictionary())
 
-        st = cls.to_json_string(jlist)
+        op = cls.to_json_string(jlist)
         with open(filename, "w", encoding="utf-8") as file:
-            file.write(st)
+            file.write(op)
 
     @staticmethod
     def from_json_string(json_string):
