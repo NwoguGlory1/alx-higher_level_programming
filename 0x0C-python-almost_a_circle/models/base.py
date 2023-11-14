@@ -21,7 +21,11 @@ class Base:
         if list_objs is None or len(list_objs) == 0:
             return "[]"
         else:
-            return json.dumps([obj.to_dictionary() for obj in list_objs if isinstance(obj, Base)])
+            return json.dumps(
+                    [obj.to_dictionary()
+                        for obj in list_objs
+                        if isinstance(obj, Base)]
+                            )
 
     @classmethod
     def save_to_file(cls, list_objs):
@@ -31,7 +35,6 @@ class Base:
         if list_objs:
             for i in list_objs:
                 jlist.append(i.to_dictionary())
-
 
         st = cls.to_json_string(jlist)
         with open(filename, "w", encoding="utf-8") as file:
