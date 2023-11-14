@@ -43,3 +43,27 @@ class Base:
             return []
         else:
             return json.loads(json_string)
+
+
+    @classmethod
+    def load_from_file(cls):
+        """returns a list of instances"""
+        filename = cls.__name__ + ".json"
+
+
+        try:
+            with open(filename, "r", encoding="utf-8") as file:
+                json_string = file.read()
+                json_list = json.loads(json_string)
+                return [cls.create(**obj) for obj in json_list]
+        except FileNotFoundError:
+            return []
+
+
+    @classmethod
+    def create(cls, **kwargs):
+        """Creates and returns an instance of the class with given attributes."""
+        instance = cls(1, 1)  # You may need to adjust the default values
+        instance.update(**kwargs)
+        return instance
+
