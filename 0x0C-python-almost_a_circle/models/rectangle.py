@@ -6,12 +6,30 @@ from models.base import Base
 
 class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
-        """ Initializer"""
-        self.width = width
-        self.height = height
-        self.x = x
-        self.y = y
-        super().__init__(id)
+        """
+        Initializer
+        Args:
+            width: the width value
+            height: the height value
+            x: x value
+            y: y value
+            """
+    if not isinstance(width, int):
+        raise TypeError("width must be an integer")
+    if not isinstance(height, int):
+        raise TypeError("height must be an integer")
+    if not isinstance(x, int):
+        raise TypeError("x must be an integer")
+    if not isinstance(y, int):
+        raise TypeError("y must be an integer")
+    if y < 0:
+        raise ValueError("y must be >= 0")
+
+    super().__init__(id)
+    self.width = width
+    self.height = height
+    self.x = x
+    self.y = y
 
     @property
     def width(self):
