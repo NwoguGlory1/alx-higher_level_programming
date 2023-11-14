@@ -7,9 +7,8 @@ class Square(Rectangle):
     """class Rectangle that inherits from Rectangle"""
 
     def __init__(self, size, x=0, y=0, id=None):
-        """ Class constructor"""
+        """ Constructor. Self.width and self.height are both set to size """
         super().__init__(size, size, x, y, id)
-        """self.width and self.height are both set to size in super init"""
         self.x = x
         self.y = y
 
