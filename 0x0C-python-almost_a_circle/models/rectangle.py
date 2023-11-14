@@ -20,12 +20,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """Setter for width"""
-        if type(value) is not int:
-            raise TypeError("width must be an integer")
-        elif value <= 0:
-            raise ValueError("width must be > 0")
-        else:
-            self.__width = value
+        self.__width = value
 
     @property
     def height(self):
@@ -35,12 +30,7 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """Setter for height"""
-        if type(value) is not int:
-            raise TypeError("height must be an integer")
-        elif value <= 0:
-            raise ValueError("height must be > 0")
-        else:
-            self.__height = value
+        self.__height = value
 
     @property
     def x(self):
@@ -50,12 +40,7 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """Setter for x"""
-        if type(value) is not int:
-            raise TypeError("x must be an integer")
-        elif value < 0:
-            raise ValueError("x must be >= 0")
-        else:
-            self.__x = value
+        self.__x = value
 
     @property
     def y(self):
@@ -65,50 +50,4 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """Setter for y"""
-        if type(value) is not int:
-            raise TypeError("y must be an integer")
-        elif value < 0:
-            raise ValueError("y must be >= 0")
-        else:
-            self.__y = value
-
-    def area(self):
-        """public method that returns the area of Rectangle instance"""
-        return (self.__width * self.__height)
-
-    def display(self):
-        """pubic method tha prints in stdout Rectangle instance with: # """
-        for i in range(self.__y):
-            print()
-        for i in range(self.__height):
-            for j in range(self.__x):
-                print(' ', end='')
-            for k in range(self.__width):
-                print('#', end='')
-            print()
-
-    def __str__(self):
-        """Overriding the __str__ method"""
-        return (
-            f"[Rectangle]({self.id}) {self.__x}/{self.__y} -"
-            f"{self.__width}/{self.__height}"
-        )
-
-    def update(self, *args, **kwargs):
-        """Assigns arguments to each attribute"""
-        argmnts = ('id', 'width', 'height', 'x', 'y')
-
-        if args:
-            for i, value in enumerate((args)):
-                setattr(self, argmnts[i], value)
-
-        elif kwargs:
-            for key, value in kwargs.items():
-                setattr(self, key, value)
-
-    def to_dictionary(self):
-        """Returns the dict representation aof a Rectangle"""
-        return {
-                key: getattr(self, key)
-                for key in ('id', 'width', 'height', 'x', 'y')
-                }
+        self.__y = value
