@@ -2,6 +2,7 @@
 """Function with class, Base made for managing id attribute"""
 import json
 
+
 class Base:
     """ Created the class, Base"""
     __nb_objects = 0
@@ -29,4 +30,4 @@ class Base:
         json_string = cls.to_json_string([list_objs])
 
         with open(filename, "w") as file:
-                file.write(json_string)
+            file.write(json_string)
