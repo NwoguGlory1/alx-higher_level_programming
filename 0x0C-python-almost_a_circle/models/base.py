@@ -16,16 +16,12 @@ class Base:
             self.id = Base.__nb_objects
 
     @staticmethod
-    def to_json_string(list_objs):
-        """Static method that returns JSON rep of list_objs"""
-        if list_objs is None or len(list_objs) == 0:
+    def to_json_string(list_dictionaries):
+        """Static method that returns JSON rep of list_dictionaries"""
+        if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
         else:
-            return json.dumps(
-                    [obj.to_dictionary()
-                        for obj in list_objs
-                        if isinstance(obj, Base)]
-                            )
+            return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
