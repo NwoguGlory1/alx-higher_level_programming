@@ -93,4 +93,23 @@ class Rectangle(Base):
         return (
             f"[Rectangle]({self.id}) {self.__x}/{self.__y} -"
             f"{self.__width}/{self.__height}"
-            )
+        )
+
+    def update(self, *args, **kwargs):
+        """Assigns arguments to each attribute"""
+        argmnts = ('id', 'width', 'height', 'x', 'y')
+
+        if args:
+            for i, value in enumerate((args)):
+                setattr(self, argmnts[i], value)
+
+        elif kwargs:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
+    def to_dictionary(self):
+        """Returns the dict representation aof a Rectangle"""
+        return (
+                {key: getattr(self, key)}
+                for key in ('id', 'width', 'height', 'x', 'y')
+                )
