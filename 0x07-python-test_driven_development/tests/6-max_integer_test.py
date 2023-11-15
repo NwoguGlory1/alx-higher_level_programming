@@ -1,18 +1,19 @@
 #!/usr/bin/pythoni3
-"""
-Module to find the max integer in a list
-"""
+""" Unittest for max_integer function """
+import unittest
+max_integer = __import__('6-max_integer').max_integer
 
-def max_integer(list=[]):
-    """Function to find and return the max integer in a list of integers
-        If the list is empty, the function returns None
-    """
-    if len(list) == 0:
-        return None
-    result = list[0]
-    i = 1
-    while i < len(list):
-        if list[i] > result:
-            result = list[i]
-        i += 1
-    return result
+
+class TestMaxInt(unittest.TestCase):
+    """Class for unittest of max_integer function"""
+
+
+    def test_max_integerlist(self):
+        self.assertEqual(max_integer([1, 5, 8, 2]), 8)
+        self.assertEqual(max_integer([-1, 0, -5, -4]), 0)
+        self.assertEqual(max_integer([-1, -5, -8, -2]), -1)
+        self.assertIsNone(max_integer([]))
+
+
+if __name__ == '__main__':
+    unittest.main()
