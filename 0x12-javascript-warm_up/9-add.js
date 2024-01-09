@@ -5,7 +5,7 @@ const argv2 = process.argv[3];
 const x = parseInt(argv1);
 const y = parseInt(argv2);
 
-function add(a, b) {
+function add (a, b) {
   return a + b;
 }
 const sum = add(x, y);
