@@ -2,9 +2,7 @@
 
 class Rectangle {
   constructor (w, h) {
-    if (w === 0 || h === 0 || isNaN(w) || isNaN(h)) {
-      this.width = undefined;
-      this.height = undefined;
+    if (w <= 0 || h <= 0) {
     } else {
       this.width = w;
       this.height = h;
@@ -13,3 +11,6 @@ class Rectangle {
 }
 
 module.exports = Rectangle;
+//|| isNaN(w) || isNaN(h))
+//   this.width = 0;
+//    this.height = 0;
