@@ -1,10 +1,10 @@
 #!/usr/bin/node
 
-const Square = require('./5-square');
+const Square5 = require('./5-square');
 
-class Square extends Square {
+class Square extends Square5 {
   charPrint (c) {
-    if (typeof (c) === 'undefined', {
+    if (typeof (c) === 'undefined') {
       c = 'X';
     }
     for (let i = 0; i < this.height; i++) {
