@@ -11,6 +11,6 @@ class Rectangle {
 }
 
 module.exports = Rectangle;
-//|| isNaN(w) || isNaN(h))
+// || isNaN(w) || isNaN(h))
 //   this.width = 0;
 //    this.height = 0;
