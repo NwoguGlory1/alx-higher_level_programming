@@ -3,8 +3,9 @@
 
 import MySQLdb
 import sys
-"retrieves mySQL usernme,passwrd &database from commndline"
+
 from sys import argv
+"retrieves mySQL usernme,passwrd &database from commndline"
 
 if __name__ == "__main__":
     mysql_username = sys.argv[1]
@@ -12,11 +13,11 @@ if __name__ == "__main__":
     database_name = sys.argv[3]
 
     connection = MySQLdb.connect(
-    user=mysql_username,
-    passwd=mysql_password,
-    database=database_name,
-    host='localhost',
-    port=3306
+            user=mysql_username,
+            passwd=mysql_password,
+            database=database_name,
+            host='localhost',
+            port=3306
     )
     cursor = connection.cursor()
     cursor.execute("""
