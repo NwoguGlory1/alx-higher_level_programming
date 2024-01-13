@@ -22,13 +22,12 @@ if __name__ == "__main__":
             port=3306
     )
     cursor = connection.cursor()
-    user_input = input("Enter a state name:")
     query = """
         SELECT states.id, states.name
         FROM states
         WHERE name = '{}'
         ORDER BY states.id ASC;
-        """.format(user_input)
+        """.format(state_name_searched)
     cursor.execute(query)
     results = cursor.fetchall()
 
