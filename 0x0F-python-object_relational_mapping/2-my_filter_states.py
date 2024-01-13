@@ -25,7 +25,7 @@ if __name__ == "__main__":
     query = """
         SELECT states.id, states.name
         FROM states
-        WHERE name LIKE BINARY {}
+        WHERE name LIKE BINARY '{}'
         ORDER BY states.id ASC;
         """.format(state_name_searched)
     cursor.execute(query)
