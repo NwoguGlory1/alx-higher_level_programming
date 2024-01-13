@@ -35,9 +35,6 @@ if __name__ == "__main__":
     cursor.close()
     connection.close()
     """
-    INSERT INTO cities (states.name)
-    SELECT cities.id, cities.name, states.name
-    FROM cities
-    JOIN states ON cities.state_id = states.id
-    ORDER BY cities.id ASC;
+    join is used with select to join rows from cities & rows from states.
+    where state_id in cities matches id in states table
     """
