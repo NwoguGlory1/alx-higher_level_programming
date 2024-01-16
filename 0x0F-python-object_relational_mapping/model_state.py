@@ -3,12 +3,11 @@
 script with a class, Base and an instance, Base = declarative_base()
 """
 
-import sqlalchemy
-from sqlalchemy import create_engine
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, MetaData
 from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
+
 
 class State(Base):
     __tablename__ = 'states'
