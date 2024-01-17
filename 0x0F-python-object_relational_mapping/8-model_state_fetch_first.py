@@ -20,7 +20,8 @@ if __name__ == "__main__":
     session = Session()
 
     states = session.query(State).first()
-    """states = session.query(State).filter_by(states.name).first didn't work """
+    """states = session.query(State).filter_by(states.name).first
+    didn't work or California instead of states.name"""
 
     if states:
         print("{:d}: {:s}".format(states.id, states.name))
