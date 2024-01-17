@@ -3,7 +3,7 @@
 script with a class, Base and an instance, Base = declarative_base()
 """
 
-from sqlalchemy import Column, Integer, String, MetaData
+from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
