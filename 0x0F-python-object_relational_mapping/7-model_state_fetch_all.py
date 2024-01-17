@@ -1,35 +1,23 @@
 #!/usr/bin/python3
 """
 script that lists all State objects from database:hbtn_0e_6_usa
+via SQLAlchemy, not mysql connector now
 """
 
 import sys
-import MySQLdb
-from sys import argv
 from model_state import Base, State
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+
 
 if __name__ == "__main__":
-    mysql_username = sys.argv[1]
-    mysql_password = sys.argv[2]
-    database_name = sys.argv[3]
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
 
-    connection = MySQLdb.connect(
-            user=mysql_username,
-            passwd=mysql_password,
-            database=database_name,
-            host='localhost',
-            port=3306
-    )
-    cursor = connection.cursor()
-    cursor.execute("""
-            SELECT states.id, states.name
-            FROM states
-            ORDER BY states.id ASC;
-            """)
-    results = cursor.fetchall()
+    Session = sessionmaker(bind=engine)
+    session = Session()
 
-    for row in results:
-        print(row)
+    states = session.query(State).order_by(State.id).all()
 
-    cursor.close()
-    connection.close()
+    for state in states:
+        print("{:d}: {:s}".format(state.id, state.name))
+
