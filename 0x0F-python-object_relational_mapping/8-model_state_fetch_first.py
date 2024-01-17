@@ -25,4 +25,4 @@ if __name__ == "__main__":
         print("{:d}: {:s}".format(states.id, states.name))
 
     else:
-        print('Nothing\n')
+        print('Nothing')
