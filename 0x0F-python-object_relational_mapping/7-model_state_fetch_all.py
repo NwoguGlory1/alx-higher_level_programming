@@ -14,7 +14,8 @@ if __name__ == "__main__":
     """
     code should not be executed when imported
     """
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
+        sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
 
     Session = sessionmaker(bind=engine)
     session = Session()
@@ -23,4 +24,3 @@ if __name__ == "__main__":
 
     for state in states:
         print("{:d}: {:s}".format(state.id, state.name))
-
