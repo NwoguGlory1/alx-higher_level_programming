@@ -19,7 +19,8 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    states = session.query(State).filter_by(name='California').first()
+    states = session.query(State).first()
+    """states = session.query(State).filter_by(states.name).first didn't work """
 
     if states:
         print("{:d}: {:s}".format(states.id, states.name))
