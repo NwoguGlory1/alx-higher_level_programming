@@ -15,6 +15,7 @@ if __name__ == "__main__":
         data = urllib.parse.urlencode(eMail).encode('utf-8')
         req_object = urllib.request.Request(url, data)
         with urllib.request.urlopen(req_object) as response:
-            print("Your email is: {}".format(response.read().decode('utf-8')))
+            value = response.read().decode('utf-8')
+            print(value)
     except:
         pass
