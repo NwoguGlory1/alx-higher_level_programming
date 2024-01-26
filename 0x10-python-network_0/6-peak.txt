@@ -1,0 +1,2 @@
+#This is the complexity of binary search
+O(log(n))
