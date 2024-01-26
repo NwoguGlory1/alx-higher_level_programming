@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+""" What's my status? """
+
 import urllib.request
 if __name__ == "__main__":
     url = 'https://alx-intranet.hbtn.io/status'
