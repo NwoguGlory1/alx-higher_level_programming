@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-""" A  Python script that fetches a url using urllib"""
+""" A  Python script that fetches a url using urllib """
 
 if __name__ == "__main__":
+    """ ensures that code will not run if imported """
     import urllib.request
     url = 'https://alx-intranet.hbtn.io/status'
     with urllib.request.urlopen(url) as response:
