@@ -11,6 +11,6 @@ if __name__ == "__main__":
     import sys
     url = sys.argv[1]
     eMail_value = {"email": sys.argv[2]}
-    response = requests.post(url, data)
+    response = requests.post(url, eMail_value)
     content = response.text
     print(content)
