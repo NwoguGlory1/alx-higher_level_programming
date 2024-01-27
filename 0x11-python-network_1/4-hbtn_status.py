@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
- Python script that fetches https://alx-intranet.hbtn.io/status
- using package, requests
+ Python script that fetches https://alx-intranet.hbtn.io/status using requests
 """
 if __name__ == "__main__":
     """ ensures script does not run if imported """
