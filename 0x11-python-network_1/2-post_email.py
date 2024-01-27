@@ -6,7 +6,7 @@ as a parameter, displays body of the response(decoded in utf-8)
 """
 if __name__ == "__main__":
     """ ensures script does not run if imported """
-    import urllib
+    import urllib.request
     import sys
 
     try:
@@ -18,5 +18,6 @@ if __name__ == "__main__":
         with urllib.request.urlopen(req_object) as response:
             value = response.read().decode('utf-8')
             print(value)
+
     except:
         pass
