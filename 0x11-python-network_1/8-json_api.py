@@ -15,13 +15,11 @@ if __name__ == "__main__":
         data = {'q': ""}
     try:
         response = requests.post(url, data)
-        content_in_js = response.json()
-        if not content_in_js:
+        js = response.json()
+        if not js:
             print("No result")
         else:
-            print("[{}] {}".format(
-                content_in_js.get('id'),
-                content_in_js.get('name')))
+            print("[{}] {}".format(js.get('id'), js.get('name')))
     """ retrieves"""
     except ValueError:
         print("Not a valid JSON")
