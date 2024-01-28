@@ -11,7 +11,7 @@ if __name__ == "__main__":
 
     url = sys.argv[1]
     response = requests.get(url)
-    response.raise_for_status()
+    response.status_code
     """ raises and HTTP Error. Below is thecontent of response"""
     content = response.text
     print(content)
