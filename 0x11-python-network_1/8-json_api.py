@@ -10,16 +10,16 @@ if __name__ == "__main__":
     import sys
     url = "http://0.0.0.0:5000/search_user"
     if len(sys.argv) > 1:
-        data = {"q": sys.argv[1]}
+        data = {'q': sys.argv[1]}
     else:
         data = {'q': ""}
     try:
         response = requests.post(url, data)
         content_in_js = response.json()
-        if not js:
+        if not content_in_js:
             print("No result")
         else:
-            print("[{}] {}".format(js.get('id'), js.get('name')))
+            print("[{}] {}".format(content_in_js.get('id'), content_in_js.get('name')))
         """ retrieves"""
         except ValueError:
             print("Not a valid JSON")
