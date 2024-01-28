@@ -20,6 +20,5 @@ if __name__ == "__main__":
             print("No result")
         else:
             print("[{}] {}".format(js.get('id'), js.get('name')))
-    """ retrieves"""
     except ValueError:
         print("Not a valid JSON")
