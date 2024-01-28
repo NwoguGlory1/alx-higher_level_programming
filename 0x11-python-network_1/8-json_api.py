@@ -19,7 +19,9 @@ if __name__ == "__main__":
         if not content_in_js:
             print("No result")
         else:
-            print("[{}] {}".format(content_in_js.get('id'), content_in_js.get('name')))
-        """ retrieves"""
-        except ValueError:
-            print("Not a valid JSON")
+            print("[{}] {}".format(
+                content_in_js.get('id'),
+                content_in_js.get('name')))
+    """ retrieves"""
+    except ValueError:
+        print("Not a valid JSON")
