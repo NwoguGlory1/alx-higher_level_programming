@@ -13,10 +13,9 @@ if __name__ == "__main__":
     response = requests.get(url)
     response.status_code
     """ raises and HTTP Error. Below is thecontent of response"""
-    content = response.text
-    print(content)
 
     if response.status_code >= 400:
         print("Error code: {}".format(e.response.status_code))
     else:
-        pass
+        content = response.text
+        print(content)
