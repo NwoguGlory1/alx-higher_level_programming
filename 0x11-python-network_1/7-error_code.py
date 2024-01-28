@@ -14,9 +14,10 @@ if __name__ == "__main__":
     response.raise_for_status()
     """ raises and HTTP Error. Below is thecontent of response"""
     content = response.text
+    print(content)
 
 except requests.exceptions.HTTPError as e:
-    if response.status_code is >= 400:
+    if response.status_code >= 400:
         print("Error code: {}".format(response.status_code))
     else:
         pass
