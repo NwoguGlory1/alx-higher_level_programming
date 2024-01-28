@@ -16,7 +16,6 @@ if __name__ == "__main__":
     content = response.text
     print(content)
 
-except requests.exceptions.HTTPError as e:
     if response.status_code >= 400:
         print("Error code: {}".format(e.response.status_code))
     else:
