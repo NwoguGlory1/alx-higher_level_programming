@@ -7,7 +7,7 @@ const request = require('request');
 //  Imports request module
 
 if (process.argv.length !== 3) {
-  console.error();
+// console.error();
   process.exit(1);
 }
 const url = process.argv[2];
