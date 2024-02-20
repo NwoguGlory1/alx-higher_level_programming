@@ -22,9 +22,9 @@ fs.readFile(filename, 'utf8', (err, data) => {
   if (err) {
     console.error(err);
     return;
-// If error, it logs error message to console
+    // If error, it logs error message to console
   }
 
-// If reading is successful, log the content to the console
+  // If reading is successful, log the content to the console
   console.log(data);
 });
