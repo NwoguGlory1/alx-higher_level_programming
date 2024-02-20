@@ -7,7 +7,7 @@ const request = require('request');
 //  Imports request module
 
 if (process.argv.length !== 3) {
-	process.exit(1);
+  process.exit(1);
 }
 /* process.argv helps us access command line args.
  * The Ist two element are for executable path & script name
