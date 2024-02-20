@@ -22,6 +22,6 @@ fs.writeFile(filename, content, 'utf8', (err) => {
     console.error(err);
     process.exit(1);
   }
-  console.log(`${filename}`);
+// console.log(`${filename}`);
 // fs.writeFile method to write the content of the file
 });
