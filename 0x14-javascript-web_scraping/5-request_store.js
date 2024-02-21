@@ -41,8 +41,8 @@ http.get(url, (response) => {
       }
     });
   });
-})
+});
 // Event listener for errors during the HTTP request
- // .on('error', (error) => {
-   // console.error(error.message);
- // });
+// .on('error', (error) => {
+// console.error(error.message);
+// });
