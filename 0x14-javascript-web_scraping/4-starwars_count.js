@@ -7,7 +7,6 @@ const request = require('request');
 // Imports request module
 
 if (process.argv.length !== 3) {
-  console.error('Usage: node script.js <api_url>');
   process.exit(1);
 }
 /* process.argv helps us access command line args.
@@ -31,7 +30,7 @@ request(url, (error, response, body) => {
       // Print the number of films with "Wedge Antilles"
       console.log(`${filmsWithWedge.length}`);
     } catch (parseError) {
-      console.error('Error parsing API response:', parseError.message);
+      console.error(parseError.message);
     }
   } else {
     console.error('Error fetching data from API:', error || `Status Code: ${response.statusCode}`);
